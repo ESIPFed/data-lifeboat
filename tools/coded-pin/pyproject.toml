@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coded-pin"
+version = "0.1.0"
+description = "Publish scientific datasets as Icechunk stores on IPFS/Filecoin"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "CC0-1.0" }
+authors = [
+    { name = "CODED Working Group", email = "esip@esipfed.org" },
+]
+keywords = ["zarr", "icechunk", "ipfs", "filecoin", "storacha", "geoscience", "data-resilience"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+    "Topic :: Scientific/Engineering :: GIS",
+    "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "click>=8.1",
+    "rich>=13.0",
+    "icechunk>=1.0",
+    "virtualizarr>=2.0",
+    "xarray>=2024.0",
+    "zarr>=3.0",
+    "obstore>=0.9",
+    "obspec-utils>=0.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio", "ruff"]
+
+[project.scripts]
+coded-pin = "coded_pin.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["coded_pin*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

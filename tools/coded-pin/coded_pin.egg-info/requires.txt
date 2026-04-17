@@ -1,0 +1,13 @@
+click>=8.1
+rich>=13.0
+icechunk>=1.0
+virtualizarr>=2.0
+xarray>=2024.0
+zarr>=3.0
+obstore>=0.9
+obspec-utils>=0.1
+
+[dev]
+pytest
+pytest-asyncio
+ruff

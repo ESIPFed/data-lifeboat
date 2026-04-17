@@ -1,0 +1,2 @@
+[console_scripts]
+coded-pin = coded_pin.cli:main
